@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پشکنینی ئۆتیزم - OS-Chat | أسامە صفوان محمد</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Vazirmatn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mchat: {
+                            teal: '#0d5c63',
+                            darkTeal: '#083c41',
+                            lightTeal: '#e6f2f3',
+                            gold: '#d9a036',
+                            cream: '#fffdfa',
+                            creamCard: '#fbf7ee',
+                            textDark: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Vazirmatn', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #f7f5f0;
+            color: #1e293b;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#0d5c63 0.5px, transparent 0.5px), radial-gradient(#0d5c63 0.5px, #f7f5f0 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.05;
+        }
+        .watermark-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        .watermark-bg::before {
+            content: "OSAMA SAFWAN";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-12deg);
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: rgba(13, 92, 99, 0.05);
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+            letter-spacing: 2px;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { background: white; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <!-- Top Navigation / Banner -->
+    <header class="bg-mchat-teal text-white shadow-md relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 opacity-10 text-white text-9xl">
+            <i class="fa-solid font-heart-pulse"></i>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 py-6 relative z-10">
+            <!-- Specialist Info Header -->
+            <div class="bg-mchat-darkTeal/60 backdrop-blur border border-white/10 rounded-2xl p-4 mb-6 text-center md:text-right md:flex md:items-center md:justify-between">
+                <div>
+                    <span class="inline-block bg-mchat-gold text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full mb-1">
+                        <i class="fa-solid fa-user-doctor ml-1"></i> ڕاوێژکاری شارەزا
+                    </span>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">أسامە صفوان محمد</h2>
+                    <p class="text-mchat-lightTeal text-sm font-medium">پسپۆڕی ئۆتیزم / دواکەوتنی قسەکردن / ADHD</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex flex-wrap gap-2 justify-center md:justify-end">
+                    <a href="tel:07509049565" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-2 rounded-xl transition flex items-center gap-2 border border-white/20">
+                        <i class="fa-solid fa-phone text-mchat-gold"></i>
+                        <span dir="ltr">0750 904 9565</span>
+                    </a>
+                    <a href="tel:07739992919" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-2 rounded-xl transition flex items-center gap-2 border border-white/20">
+                        <i class="fa-solid fa-phone text-mchat-gold"></i>
+                        <span dir="ltr">0773 999 2919</span>
+                    </a>
+                    <a href="https://wa.me/9647509049565" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-2 rounded-xl transition flex items-center gap-1 font-bold">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> واتسئاپ
+                    </a>
+                </div>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <div class="text-center py-2">
+                <p class="text-mchat-gold font-bold text-sm md:text-base tracking-wide uppercase mb-1">ئاگاداری بۆ خێزانەکان</p>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-2">OS-Chat</h1>
+                <p class="text-lg md:text-xl text-mchat-lightTeal font-medium">پشکنینێکی خێرا بۆ منداڵانی ١٦ بۆ ٣٠ مانگ</p>
+                <div class="mt-3 inline-flex items-center gap-2 bg-mchat-gold/20 border border-mchat-gold/40 text-mchat-gold text-xs md:text-sm font-semibold px-4 py-2 rounded-xl">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>تکایە دوای بەدەستهێنانی کۆتا ئەنجام، ئەنجامەکە لە واتساپ بنێرن بۆ ئەوەی بزانن منداڵەکەت کێشەی چییە و پێویستی بە چییە بۆ بەرەوپێشچوون.</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
+
+        <!-- Educational Info Cards Grid (Matching Flyer Layout) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 no-print">
+            <!-- Card 1: چییە؟ -->
+            <div class="bg-mchat-creamCard border border-mchat-gold/30 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-xl bg-mchat-teal/10 flex items-center justify-center text-mchat-teal">
+                        <i class="fa-solid fa-circle-question text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-mchat-teal">OS-Chat چییە؟</h3>
+                </div>
+                <p class="text-slate-700 leading-relaxed">
+                    لیستێکی <strong>٣٠ پرسیاری سادەیە</strong>، دایک یاخود باوک بە <strong>«بەڵێ»</strong> یاخود <strong>«نەخێر»</strong> وەڵامی دەداتەوە سەبارەت بە ڕەفتاری منداڵەکە لە ژیانی ڕۆژانەدا.
+                </p>
+            </div>
+
+            <!-- Card 2: بۆ چی بەکاردێت؟ -->
+            <div class="bg-mchat-creamCard border border-mchat-gold/30 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-xl bg-mchat-gold/20 flex items-center justify-center text-mchat-gold">
+                        <i class="fa-solid fa-bullseye text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-mchat-teal">بۆ چی بەکاردێت؟</h3>
+                </div>
+                <p class="text-slate-700 leading-relaxed">
+                    بۆ ئەوەی ئەگەر نیشانەی <strong>ئۆتیزم</strong> یاخود <strong>دواکەوتنی گەشە</strong> هەبوو، زوو بزانرێت و خێزان بچێتە لای پسپۆڕ.
+                </p>
+            </div>
+
+            <!-- Card 3: خێزانەکان پێویستە بزانن (Full Width) -->
+            <div class="md:col-span-2 bg-mchat-teal text-white rounded-2xl p-6 md:p-8 shadow-md">
+                <div class="flex items-center gap-3 mb-4 border-b border-white/20 pb-4">
+                    <i class="fa-solid fa-lightbulb text-2xl text-mchat-gold"></i>
+                    <h3 class="text-2xl font-bold text-mchat-gold">خێزانەکان پێویستە بزانن</h3>
+                </div>
+                <ul class="space-y-3 text-mchat-lightTeal text-base leading-relaxed">
+                    <li class="flex items-start gap-3">
+                        <span class="bg-mchat-gold text-slate-900 font-bold rounded-full w-6 h-6 flex items-center justify-center shrink-0 text-sm mt-0.5">١</span>
+                        <span>ئەمە <strong>پشکنینە</strong> و دەستنیشانکردن نییە.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="bg-mchat-gold text-slate-900 font-bold rounded-full w-6 h-6 flex items-center justify-center shrink-0 text-sm mt-0.5">٢</span>
+                        <span>ئەگەر چەند وەڵامێکی نیگەرانکەر هەبوو، سەردانی پسپۆڕ بکه بۆ ڕاوێژ.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="bg-mchat-gold text-slate-900 font-bold rounded-full w-6 h-6 flex items-center justify-center shrink-0 text-sm mt-0.5">٣</span>
+                        <span>دۆزینەوەی زوو دەرفەتی یارمتیدانی باشتر دەدات.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="bg-mchat-gold text-slate-900 font-bold rounded-full w-6 h-6 flex items-center justify-center shrink-0 text-sm mt-0.5">٤</span>
+                        <span>ئه‌نجامی ئاسایی مانای ئه‌وه‌ نییه‌ نیگه‌رانییه‌که‌ت پشتگوێ بخەیت لە هەبوونی هەر خاڵێک لە منداڵەکەت پێویستە ئاگاداربی.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Interactive Screening Section -->
+        <section id="quiz-section" class="bg-white rounded-3xl shadow-xl border border-slate-200 p-6 md:p-8 mb-10">
+            <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-slate-200 pb-5 mb-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-mchat-teal flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-check text-mchat-gold"></i>
+                        پشکنینی ئۆنلاین (OS-Chat)
+                    </h2>
+                    <p class="text-sm text-slate-500 mt-1">تکایە وەڵامی هەموو پرسیارەکان بدەرەوە بەپێی ڕەفتاری ئاسایی منداڵەکەت.</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex items-center gap-2">
+                    <span id="progress-text" class="text-xs font-bold bg-mchat-lightTeal text-mchat-teal px-3 py-1.5 rounded-full">
+                        وەڵامدراوە: 0 / 30
+                    </span>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form id="mchatForm" onsubmit="calculateScore(event)">
+                <div id="questions-container" class="space-y-6">
+                    <!-- Questions injected via JS -->
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-slate-200 flex flex-col items-center gap-4 no-print">
+                    <!-- Updated note above the submit button -->
+                    <p class="text-xs md:text-sm font-semibold text-mchat-teal bg-mchat-lightTeal border border-mchat-teal/20 px-4 py-2 rounded-xl text-center">
+                        <i class="fa-solid fa-circle-info ml-1 text-mchat-gold"></i>
+                        دەتوانن ئەنجامەکان سکرین بکەن و بۆ ئەو ژمارانەی خوارەوەی بنێرن بۆ ڕێنمایی و ڕاوێژی زیاتر
+                    </p>
+                    
+                    <div class="w-full flex flex-col md:flex-row items-center justify-between gap-4">
+                        <button type="button" onclick="resetForm()" class="w-full md:w-auto px-6 py-3 rounded-xl border border-slate-300 text-slate-600 hover:bg-slate-100 font-semibold transition">
+                            <i class="fa-solid fa-rotate-right ml-2"></i> پاککردنەوەی وەڵامەکان
+                        </button>
+                        <button type="submit" class="w-full md:w-auto bg-mchat-teal hover:bg-mchat-darkTeal text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-lg">
+                            <i class="fa-solid fa-chart-line"></i> ئەنجامی کۆتایی
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Results Display Section -->
+            <div id="resultBox" class="hidden mt-8 pt-8 border-t-2 border-dashed border-slate-300">
+                <div id="resultContent" class="rounded-2xl p-6 text-center">
+                    <!-- Dynamic Result JS Injection -->
+                </div>
+
+                <!-- Action buttons after evaluation -->
+                <div class="mt-6 flex flex-wrap justify-center gap-4 no-print">
+                    <button onclick="copyResultsToClipboard()" class="bg-mchat-teal hover:bg-mchat-darkTeal text-white font-medium px-5 py-2.5 rounded-xl transition flex items-center gap-2 shadow-sm">
+                        <i class="fa-solid fa-copy"></i> کۆپیکردنی ئەنجام
+                    </button>
+                    <button onclick="window.print()" class="bg-slate-800 hover:bg-slate-900 text-white font-medium px-5 py-2.5 rounded-xl transition flex items-center gap-2">
+                        <i class="fa-solid fa-print"></i> چاپی ئەنجامەکە
+                    </button>
+                    <a id="whatsappShareBtn" href="#" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-5 py-2.5 rounded-xl transition flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> ناردنی ئەنجام بۆ پسپۆڕ (واتسئاپ)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-mchat-darkTeal text-white border-t border-white/10 py-8 no-print">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
+            <p class="text-xs md:text-sm text-mchat-lightTeal font-medium bg-white/5 py-3 px-4 rounded-xl border border-white/10 max-w-2xl mx-auto">
+                <i class="fa-solid fa-triangle-exclamation text-mchat-gold ml-1"></i>
+                ئەم ماڵپەرە زانیاری و نیشانەی سەرەتاییە بە تەواوی منداڵەکەت دیاری ناکات کە کێشەی چییە دەتوانن بۆ پرسیار و ڕاوێژی زیاتر پەیوەندیمان پێوە بکەن
+            </p>
+            <div class="pt-2">
+                <h4 class="font-bold text-lg text-mchat-gold">أسامە صفوان محمد</h4>
+                <p class="text-xs text-slate-300">پسپۆڕی ئۆتیزم / دواکەوتنی قسەکردن / ADHD</p>
+                <p class="text-xs text-mchat-gold mt-2 font-medium">
+                    <i class="fa-brands fa-whatsapp ml-1"></i> بە داگرتنی هەریەک لەم ژمارانەی خوارەوە، ڕاستەوخۆ دەچیتە ناو واتسئاپ:
+                </p>
+                <div class="flex justify-center gap-3 mt-2 flex-wrap" dir="ltr">
+                    <a href="https://wa.me/9647509049565" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600/20 hover:bg-emerald-600/40 text-emerald-300 border border-emerald-500/30 text-xs px-3 py-1.5 rounded-xl transition font-bold">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> 0750 904 9565
+                    </a>
+                    <a href="https://wa.me/9647739992919" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600/20 hover:bg-emerald-600/40 text-emerald-300 border border-emerald-500/30 text-xs px-3 py-1.5 rounded-xl transition font-bold">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> 0773 999 2919
+                    </a>
+                </div>
+            </div>
+            <p class="text-xs text-slate-500 pt-4">پشکنینی ڕێنمایی گەشەی منداڵان و نیشانەکانی ئۆتیزم - تایبەت بە پشکنینی سەرەتایی خێزانەکان.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // OS-Chat Questions in Central Kurdish - 30 Simplified Questions
+        // yesIsRisk: false = "نەخێر" indicates risk, true = "بەڵێ" indicates risk.
+        const questions = [
+            { id: 1, text: "ئەگەر لە شوێنێک بە پەنجە ئاماژە بۆ یارییەک یان شتێک بکەیت لە ژوورەکەدا، ئایا منداڵەکەت سەیری ئەو شوێنە دەکات کە ئاماژەت بۆ کردووە؟", yesIsRisk: false },
+            { id: 2, text: "ئایا تا ئێستا هەستت کردووە یان گومانت لادروست بووە کە منداڵەکەت بە زەحمەت گوێی لێدەبێت یان هەستی گوێگرتنی گران بێت؟", yesIsRisk: true },
+            { id: 3, text: "ئایا دەتوانێت ڕستەی دوو تا سێ ووشەیی دەرببڕێت؟", yesIsRisk: false },
+            { id: 4, text: "ئایا حەزی لە سەرکەوتنە بەسەر کەلوپەلەکاندا؟ (بۆ نموونە: سەرکەوتن بەسەر پلیکانە، قەنەفە، یان کەلوپەلی بەرز لە ماڵەوە)", yesIsRisk: false },
+            { id: 5, text: "ئایا منداڵەکەت پەنجەکانی بە شێوازێکی سەیر لە نزیک چاوەکانی دەجووڵێنێت یان لێیان دەڕوانێت کاتێک دەیانجووڵێنێت؟", yesIsRisk: true },
+            { id: 6, text: "ئایا حەز بە ڕاکردن و خولانەوەی زۆر دەکات؟", yesIsRisk: true },
+            { id: 7, text: "ئایا بە پەنجە ئاماژە بۆ شتێکی سەرنجڕاکێش دەکات تەنها بۆ ئەوەی بە تۆی نیشان بدات؟ (بۆ نموونە: ئاماژەکردن بۆ فڕۆکە لە ئاسمان یان ئۆتۆمبێلێکی گەورە)", yesIsRisk: false },
+            { id: 8, text: "ئایا حەز لە تێکەڵاوبوون و یاری کردن دەکات لەگەڵ منداڵانی تردا و لێیان نزیک دەبێتەوە؟", yesIsRisk: false },
+            { id: 9, text: "ئایا یارییەکانی یان کەلوپەلەکانی بۆت دەهێنێت یان بەرزیان دەکاتەوە تەنها بۆ ئەوەی بە تۆیان نیشان بدات؟", yesIsRisk: false },
+            { id: 10, text: "ئایا کاتێک بە دەنگی ئاسایی بانگی ناوی دەکەیت، ئاوڕ دەداتەوە و سەیرت دەکات؟", yesIsRisk: false },
+            { id: 11, text: "کاتێک پێدەکەنی یان زەردەخەنەی بۆ دەکەیت، ئایا ئەویش پێدەکەنێتەوە یان زەردەخەنەت بۆ دەکاتەوە؟", yesIsRisk: false },
+            { id: 12, text: "ئایا منداڵەکەت بە دەنگی بەرز یان ئاسایی زۆر بێزار دەبێت و دەست دەگرێت بە گوێچکەکانییەوە؟ (وەک دەنگی گسک یان دەنگی قەرەبالغی)", yesIsRisk: true },
+            { id: 13, text: "ئایە ڕۆیشتنی بە شێوەیەکی ئاساییە یان لەسەر پەنجەکانی پێی دەڕوا؟", yesIsRisk: true },
+            { id: 14, text: "ئایا ڕاستەوخۆ سەیری ناو چاوت دەکات کاتێک قسەی لەگەڵ دەکەیت، یاری لەگەڵ دەکەیت، یان جلەکانی بۆ دەپۆشیت؟", yesIsRisk: false },
+            { id: 15, text: "ئایا هەوڵدەدات چاو لە جوڵە یان دەنگەکانی تۆ بکاتەوە کاتێک یاری لەگەڵ دەکەیت؟ (بۆ نموونە: دەستلێدان، ماچکردن، یان دەنگ دەرکردن)", yesIsRisk: false },
+            { id: 16, text: "ئەگەر ئاوڕ بدەیتەوە و سەیری شوێنێک بکەیت، ئایا منداڵەکەش ئاوڕ دەداتەوە تا ببێنێت تۆ سەیری چی دەکەیت؟", yesIsRisk: false },
+            { id: 17, text: "ئایا هەوڵدەدات سەرنجت ڕابکێشێت بۆ ئەوەی سەیر بکەیت کاتێک شتێک دەکات؟", yesIsRisk: false },
+            { id: 18, text: "ئایا لە ڕێنمایی و داواکارییە سادەکان تێدەگات کاتێک بە قسە پێی دەڵێیت؟ (بۆ نموونە: 'پێڵاوەکەت بێنە' یان 'دەرگاکە دابخە')", yesIsRisk: false },
+            { id: 19, text: "ئەگەر شتێکی نوێ یان سەیر ڕووبدات، ئایا سەیری ڕوخسارت دەکات تاوەکو بزانێت تۆ چی دەکەیت یان کاردانەوەت چییە؟", yesIsRisk: false },
+            { id: 20, text: "ئایا حەزی لە یارییە جووڵەیییەکان هەیە؟ (بۆ نموونە: جۆلانێ)", yesIsRisk: false },
+            { id: 21, text: "ئایا تەرکیز و دیقەتی زۆر دەدات بە شتە بچووکەکان؟", yesIsRisk: true },
+            { id: 22, text: "ئایا پێکەنین و گریان و هاوار دەکات بە بێ هۆکار؟", yesIsRisk: true },
+            { id: 23, text: "ئایا گریانی زۆر دەکات لە بەرامبەر بەجێگەیاندنی داواکارییەکانی؟", yesIsRisk: true },
+            { id: 24, text: "ئایا بە شێوەیەکی نائاسایی یاری لەگەڵ کەلوپەل یان یارییەکانیدا دەکات؟ (بۆ نموونە: تەنها خولاندنەوەی تایەی ئۆتۆمبێل یان ڕیزکردنی یارییەک بە پێی ڕەنگ یان لەسەر دانانی یارییەکان)", yesIsRisk: true },
+            { id: 25, text: "ئایا وشەی ڕوون یان دەربڕینی سادە بەکاردێنێت بۆ ئەوەی داواکارییەکانی بگەیەنێت؟", yesIsRisk: false },
+            { id: 26, text: "ئایا وشەکان بە شێوەیەکی ڕێک و پێک بەکاردەهێنێت توانای دەربرینی باشە؟", yesIsRisk: false },
+            { id: 27, text: "ئایا زۆر قسەکانی خەڵکی دووبارە دەکاتەوە (ئێکۆلاڵیا)؟", yesIsRisk: true },
+            { id: 28, text: "ئایا زۆر حەز بە خولانەوە بە دەوری خۆیدا دەکات یان بە شێوەیەکی خولاوە بە دەوری کەلوپەلەکاندا دەسوڕێتەوە؟", yesIsRisk: true },
+            { id: 29, text: "ئایا لێدان و ئازاردانی خۆی هەیە لە کاتی توڕەبووندا؟", yesIsRisk: true },
+            { id: 30, text: "ئایا هەست دەکەیت گەشەی قسەکردن، زاری، یان تێگەیشتن و پەیوەندیکردنی بە بەراورد لەگەڵ هاوتەمەنەکانی دواکەوتووە؟", yesIsRisk: true }
+        ];
+
+        // Render Questions
+        function renderQuestions() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = '';
+
+            questions.forEach((q, index) => {
+                const qNum = index + 1;
+                const card = document.createElement('div');
+                card.className = "p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-mchat-teal/40 transition watermark-bg relative";
+                card.innerHTML = `
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
+                        <div class="flex items-start gap-3 flex-1">
+                            <span class="bg-mchat-teal text-white font-bold rounded-xl w-8 h-8 flex items-center justify-center text-sm shrink-0 mt-0.5">
+                                ${qNum}
+                            </span>
+                            <p class="text-slate-800 text-base font-medium leading-relaxed">${q.text}</p>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0 justify-end pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-200">
+                            <label class="cursor-pointer flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl border border-slate-300 hover:bg-emerald-50 transition has-[:checked]:bg-emerald-100 has-[:checked]:border-emerald-600 has-[:checked]:text-emerald-800">
+                                <input type="radio" name="q_${q.id}" value="yes" onchange="updateProgress()" class="w-4 h-4 text-emerald-600 focus:ring-emerald-500">
+                                <span class="font-bold text-sm">بەڵێ</span>
+                            </label>
+                            <label class="cursor-pointer flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl border border-slate-300 hover:bg-rose-50 transition has-[:checked]:bg-rose-100 has-[:checked]:border-rose-600 has-[:checked]:text-rose-800">
+                                <input type="radio" name="q_${q.id}" value="no" onchange="updateProgress()" class="w-4 h-4 text-rose-600 focus:ring-rose-500">
+                                <span class="font-bold text-sm">نەخێر</span>
+                            </label>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Update answered count
+        function updateProgress() {
+            let count = 0;
+            questions.forEach(q => {
+                const checked = document.querySelector(`input[name="q_${q.id}"]:checked`);
+                if(checked) count++;
+            });
+            document.getElementById('progress-text').innerText = `وەڵامدراوە: ${count} / ${questions.length}`;
+        }
+
+        // Reset Form
+        function resetForm() {
+            document.getElementById('mchatForm').reset();
+            document.getElementById('resultBox').classList.add('hidden');
+            updateProgress();
+        }
+
+        // Variable to hold report text
+        let currentReportText = "";
+
+        // Function to copy results text to clipboard
+        function copyResultsToClipboard(showAlert = true) {
+            if (!currentReportText) return;
+            
+            const textarea = document.createElement('textarea');
+            textarea.value = currentReportText;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            if (showAlert) {
+                alert('ئەنجامەکە بە سەرکەوتوویی کۆپی کرا! ئێستا دەتوانیت لە هەر شوێنێک پەیستی (Paste) بکەیت.');
+            }
+        }
+
+        // Function to download results as a TXT file
+        function downloadResultsFile(text) {
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `ئەنجامی_پشکنینی_ئۆتیزم_${new Date().toISOString().slice(0,10)}.txt`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Calculate Score & Show Guidance
+        function calculateScore(e) {
+            e.preventDefault();
+
+            let score = 0;
+            let answeredAll = true;
+            let detailedAnswers = [];
+            let speechDelayScore = 0;
+
+            // Arrays to collect specific issues based on answers
+            let detectedIssues = [];
+
+            questions.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="q_${q.id}"]:checked`);
+                if (!selected) {
+                    answeredAll = false;
+                } else {
+                    const val = selected.value; // 'yes' or 'no'
+                    const valKurdish = val === 'yes' ? 'بەڵێ' : 'نەخێر';
+                    detailedAnswers.push(`${index + 1}. ${q.text}\nوەڵام: ${valKurdish}`);
+
+                    let isRisk = false;
+                    if (q.yesIsRisk && val === 'yes') {
+                        isRisk = true;
+                    } else if (!q.yesIsRisk && val === 'no') {
+                        isRisk = true;
+                    }
+
+                    if (isRisk) {
+                        score++;
+                        
+                        // Categorize specific issues
+                        if ([3, 25, 26, 30].includes(q.id)) {
+                            speechDelayScore++;
+                        }
+
+                        if ([3, 18, 25, 26, 27, 30].includes(q.id)) {
+                            if (!detectedIssues.includes("توانای ئاخاوتن، گەشەی زمان و تێگەیشتن لە ڕێنماییەکان")) {
+                                detectedIssues.push("توانای ئاخاوتن، گەشەی زمان و تێگەیشتن لە ڕێنماییەکان");
+                            }
+                        }
+                        if ([1, 7, 8, 9, 10, 11, 14, 15, 16, 17, 19].includes(q.id)) {
+                            if (!detectedIssues.includes("پەیوەندی کۆمەڵایەتی، سەرنجدانی هاوبەش و کاردانەوە بە تێکەڵاوبوون")) {
+                                detectedIssues.push("پەیوەندی کۆمەڵایەتی، سەرنجدانی هاوبەش و کاردانەوە بە تێکەڵاوبوون");
+                            }
+                        }
+                        if ([5, 6, 12, 13, 20, 21, 28].includes(q.id)) {
+                            if (!detectedIssues.includes("ناڕێکخستنی هەستیاری (گوێگرتن، بینین) یان ڕەفتاری جووڵەیی دووبارەبووەوە (وەک خولانەوە یان سەر پەنجە)")) {
+                                detectedIssues.push("ناڕێکخستنی هەستیاری (گوێگرتن، بینین) یان ڕەفتاری جووڵەیی دووبارەبووەوە (وەک خولانەوە یان سەر پەنجە)");
+                            }
+                        }
+                        if ([22, 23, 24, 29].includes(q.id)) {
+                            if (!detectedIssues.includes("یاری پێکردنی نائاسایی بە کەلوپەل یان کۆنتڕۆڵنەکردنی هەڵچوون و توڕەیی (لێدان یان گریانی بێ هۆ)")) {
+                                detectedIssues.push("یاری پێکردنی نائاسایی بە کەلوپەل یان کۆنتڕۆڵنەکردنی هەڵچوون و توڕەیی (لێدان یان گریانی بێ هۆ)");
+                            }
+                        }
+                    }
+                }
+            });
+
+            if (!answeredAll) {
+                alert('تکایە وەڵامی هەموو پرسیارەکان بدەرەوە بەرپێش هەژمارکردنی ئەنجامەکە.');
+                return;
+            }
+
+            // Percentage Calculation
+            const percentage = Math.round((score / questions.length) * 100);
+
+            // Generate Result
+            const resultBox = document.getElementById('resultBox');
+            const resultContent = document.getElementById('resultContent');
+            resultBox.classList.remove('hidden');
+
+            let riskCategory = '';
+            let colorClass = '';
+            let bgClass = '';
+            let advice = '';
+            let statusDiagnosis = '';
+
+            const nonSpeechScore = score - speechDelayScore;
+
+            if (score <= 3) {
+                statusDiagnosis = 'گۆڕانکاری سەرەکی بەدی ناکرێت / ئاستی ئاسایی';
+                riskCategory = `مەترسی کەم (ڕێژەی مەترسی ${percentage}٪)`;
+                colorClass = 'text-emerald-700';
+                bgClass = 'bg-emerald-50 border-2 border-emerald-300';
+                advice = 'ئەنجامەکان نیشانەی مەترسیی بەرز نیشان نادەن. تکایە دوای بەدەستهێنانی کۆتا ئەنجام، ئەنجامەکە لە واتساپ بنێرن بۆ ئەوەی بزانن منداڵەکەت کێشەی چییە و پێویستی بە چییە بۆ بەرەوپێشچوون.';
+            } else if (nonSpeechScore <= 2 && speechDelayScore >= 2) {
+                statusDiagnosis = 'تەنها لە قسەکردن و ئاخاوتن دواکەوتووە';
+                riskCategory = `دواکەوتنی ئاخاوتن (ڕێژەی دواکەوتن ${percentage}٪)`;
+                colorClass = 'text-blue-700';
+                bgClass = 'bg-blue-50 border-2 border-blue-300';
+                advice = 'نیشانەکانی تێکچوونی گەشەی کۆمەڵایەتی نادیارن، بەڵام منداڵەکەت تەنها لە قسەکردن و ئاخاوتندا دواکەوتووە. پێویستی بە ڕاهێنانی زمان و پەیوەندیکردن هەیە.';
+            } else if (score >= 4 && score <= 10) {
+                statusDiagnosis = 'ئەگەری نیشانەکانی دواکەوتنی گەشە یان ئۆتیزمی سووک';
+                riskCategory = `مەترسی ناوەند (ڕێژەی مەترسی ${percentage}٪)`;
+                colorClass = 'text-amber-700';
+                bgClass = 'bg-amber-50 border-2 border-amber-300';
+                advice = 'پێویستە قۆناغی دووەمی پشکنین ئەنجام بدرێت. تکایە دوای بەدەستهێنانی کۆتا ئەنجام، ئەنجامەکە لە واتساپ بنێرن بۆ ئەوەی بزانن منداڵەکەت کێشەی چییە و پێویستی بە چییە بۆ بەرەوپێشچوون.';
+            } else {
+                statusDiagnosis = 'نیشانەکانی ڕێژەی ئۆتیزم دیار و بەرزن';
+                riskCategory = `مەترسی بەرز (ڕێژەی مەترسی ${percentage}٪)`;
+                colorClass = 'text-rose-700';
+                bgClass = 'bg-rose-50 border-2 border-rose-300';
+                advice = 'تکایە دوای بەدەستهێنانی کۆتا ئەنجام، ئەنجامەکە لە واتساپ بنێرن بۆ ئەوەی بزانن منداڵەکەت کێشەی چییە و پێویستی بە چییە بۆ بەرەوپێشچوون.';
+            }
+
+            // Build Kurdish Issues HTML Block
+            let issuesHTML = '';
+            let issuesReportText = '';
+
+            if (detectedIssues.length > 0) {
+                issuesHTML = `
+                    <div class="mt-4 p-4 bg-white/80 rounded-xl text-right border border-slate-200">
+                        <h5 class="font-bold text-slate-800 text-sm md:text-base mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-600"></i>
+                            ئەو بوارانەی کە منداڵەکەت کێشە یان لاوازی تێدا نیشانداوە:
+                        </h5>
+                        <ul class="list-disc list-inside space-y-1 text-slate-700 text-xs md:text-sm font-medium">
+                            ${detectedIssues.map(issue => `<li>${issue}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+                issuesReportText = `--- ئەو بوارانەی کێشەیان تێدایە ---\n` + detectedIssues.map(i => `• ${i}`).join('\n') + `\n\n`;
+            } else {
+                issuesHTML = `
+                    <div class="mt-4 p-3 bg-white/80 rounded-xl text-center text-emerald-700 font-bold text-xs md:text-sm">
+                        <i class="fa-solid fa-circle-check ml-1"></i> هیچ کێشەیەکی دیاریکراو لەم پشکنینەدا تۆمار نەکرا.
+                    </div>
+                `;
+            }
+
+            resultContent.className = `rounded-2xl p-6 text-center ${bgClass}`;
+            resultContent.innerHTML = `
+                <div class="inline-block px-4 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider mb-2 bg-white shadow-sm ${colorClass}">
+                    ئەنجامی پشکنین (ڕێژەی سەدی)
+                </div>
+                <h3 class="text-4xl font-black ${colorClass} mb-1">ڕێژەی مەترسی: ${percentage}٪</h3>
+                <h4 class="text-lg font-bold ${colorClass} mb-2">${statusDiagnosis}</h4>
+                <div class="text-sm font-semibold text-slate-600 mb-4">${riskCategory} (نمرە: ${score} لە ٣٠)</div>
+                <p class="text-slate-700 max-w-2xl mx-auto leading-relaxed text-sm md:text-base mb-3">${advice}</p>
+                ${issuesHTML}
+                <div class="mt-4 pt-4 border-t border-slate-200/60 text-xs text-slate-500">
+                    * ئاماژە: ئەم ئەنجامە تەنها بۆ ڕێنمایی خێزانە و جێگەی دەستنیشانکردنی فەرمی پزیشکی ناگرێتەوە.
+                </div>
+            `;
+
+            // Build full report text for download & copy
+            currentReportText = 
+                `=== ئەنجامی پشکنینی (OS-Chat) ===\n` +
+                `پسپۆڕ: أسامە صفوان محمد (پسپۆڕی ئۆتیزم / دواکەوتنی قسەکردن / ADHD)\n` +
+                `ڕێژەی مەترسی/دواکەوتن: ${percentage}٪\n` +
+                `دەستنیشانکردنی سەرەتایی: ${statusDiagnosis}\n` +
+                `خاڵی مەترسی: ${score} لە 30\n\n` +
+                `--- تێبینی و ڕێنمایی ---\n${advice}\n\n` +
+                issuesReportText +
+                `--- وەڵامی پرسیارەکان ---\n` +
+                detailedAnswers.join('\n\n');
+
+            // Auto Download file & Auto Copy to clipboard
+            downloadResultsFile(currentReportText);
+            copyResultsToClipboard(false);
+
+            // Prepare Whatsapp Message
+            const whatsappText = encodeURIComponent(
+                `سڵاو، ویستم ئاماژە بە ئەنجامی پشکنینی (OS-Chat) منداڵەکەم بکەم:\n` +
+                `- ڕێژەی سەدی: ${percentage}٪\n` +
+                `- بارودۆخ: ${statusDiagnosis}\n` +
+                `- نمرەی مەترسی: ${score} لە 30\n` +
+                (detectedIssues.length > 0 ? `- کێشە دیاریکراوەکان: ${detectedIssues.join(', ')}\n` : '') +
+                `تکایە دەمەوێت ڕاوێژتان پێبکەم.`
+            );
+            document.getElementById('whatsappShareBtn').href = `https://wa.me/9647509049565?text=${whatsappText}`;
+
+            // Scroll to results
+            resultBox.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            renderQuestions();
+        };
+    </script>
+</body>
+</html>
